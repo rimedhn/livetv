@@ -26,14 +26,51 @@
         }
         
         .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
         }
         
         .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ffd700 0%, #ff6b35 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .vibrant-title {
+            background: linear-gradient(135deg, #ff0080 0%, #ff8c00 50%, #00ff80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 140, 0, 0.8);
+            filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.6));
+        }
+        
+        .neon-title {
+            color: #00ffff;
+            text-shadow: 
+                0 0 5px #00ffff,
+                0 0 10px #00ffff,
+                0 0 15px #00ffff,
+                0 0 20px #00ffff;
+        }
+        
+        .fire-title {
+            background: linear-gradient(135deg, #ff4500 0%, #ffd700 50%, #ff1493 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 25px rgba(255, 69, 0, 0.8);
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.7));
+        }
+        
+        .electric-title {
+            background: linear-gradient(135deg, #9400d3 0%, #00bfff 50%, #32cd32 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(0, 191, 255, 0.7);
+            filter: drop-shadow(0 0 12px rgba(148, 0, 211, 0.6));
         }
         
         .card-hover {
@@ -130,16 +167,19 @@
         }
         
         .price-card {
-            background: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             border-radius: 20px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+            color: #1a1a1a;
+            border: 2px solid #e9ecef;
         }
         
         .price-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #ffd700;
         }
         
         .smooth-scroll {
@@ -147,45 +187,72 @@
         }
         
         .cinema-bg {
-            background-image: 
-                linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="spotlight" cx="50%" cy="30%" r="40%"><stop offset="0%" style="stop-color:%23ffffff;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23000000;stop-opacity:0.8"/></radialGradient></defs><rect width="1200" height="800" fill="url(%23spotlight)"/><g opacity="0.3"><circle cx="100" cy="100" r="2" fill="%23ffffff"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/></circle><circle cx="300" cy="150" r="1.5" fill="%23ffffff"><animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/></circle><circle cx="500" cy="80" r="2.5" fill="%23ffffff"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="5s" repeatCount="indefinite"/></circle><circle cx="700" cy="120" r="1" fill="%23ffffff"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/></circle><circle cx="900" cy="90" r="2" fill="%23ffffff"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.5s" repeatCount="indefinite"/></circle><circle cx="1100" cy="110" r="1.5" fill="%23ffffff"><animate attributeName="opacity" values="0.6;1;0.6" dur="4.5s" repeatCount="indefinite"/></circle></g></svg>');
+            background: 
+                radial-gradient(ellipse at center top, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.95) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="spotlight" cx="50%" cy="20%" r="60%"><stop offset="0%" style="stop-color:%23ffd700;stop-opacity:0.3"/><stop offset="40%" style="stop-color:%23ffffff;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23000000;stop-opacity:0.9"/></radialGradient></defs><rect width="1200" height="800" fill="url(%23spotlight)"/><g opacity="0.6"><circle cx="150" cy="120" r="3" fill="%23ffd700"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle><circle cx="350" cy="180" r="2" fill="%23ffffff"><animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/></circle><circle cx="550" cy="100" r="2.5" fill="%23ffd700"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite"/></circle><circle cx="750" cy="140" r="1.5" fill="%23ffffff"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/></circle><circle cx="950" cy="110" r="3" fill="%23ffd700"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.5s" repeatCount="indefinite"/></circle><circle cx="1100" cy="130" r="2" fill="%23ffffff"><animate attributeName="opacity" values="0.6;1;0.6" dur="4.5s" repeatCount="indefinite"/></circle></g></svg>');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
         
         .theater-bg {
-            background-image: 
-                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="curtain" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%23800020;stop-opacity:0.8"/><stop offset="50%" style="stop-color:%23a0002a;stop-opacity:0.9"/><stop offset="100%" style="stop-color:%23800020;stop-opacity:0.8"/></linearGradient></defs><rect width="1200" height="600" fill="%23000000"/><rect x="0" y="0" width="150" height="600" fill="url(%23curtain)"/><rect x="1050" y="0" width="150" height="600" fill="url(%23curtain)"/><g opacity="0.4"><rect x="200" y="500" width="800" height="100" fill="%23333333" rx="10"/><circle cx="250" cy="520" r="8" fill="%23666666"/><circle cx="350" cy="520" r="8" fill="%23666666"/><circle cx="450" cy="520" r="8" fill="%23666666"/><circle cx="550" cy="520" r="8" fill="%23666666"/><circle cx="650" cy="520" r="8" fill="%23666666"/><circle cx="750" cy="520" r="8" fill="%23666666"/><circle cx="850" cy="520" r="8" fill="%23666666"/><circle cx="950" cy="520" r="8" fill="%23666666"/></g></svg>');
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.85), rgba(26, 26, 26, 0.85)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="curtain" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%23800020;stop-opacity:0.9"/><stop offset="50%" style="stop-color:%23a0002a;stop-opacity:1"/><stop offset="100%" style="stop-color:%23800020;stop-opacity:0.9"/></linearGradient><radialGradient id="stageLight" cx="50%" cy="10%" r="40%"><stop offset="0%" style="stop-color:%23ffd700;stop-opacity:0.2"/><stop offset="100%" style="stop-color:%23000000;stop-opacity:0.8"/></radialGradient></defs><rect width="1200" height="600" fill="url(%23stageLight)"/><rect x="0" y="0" width="180" height="600" fill="url(%23curtain)"/><rect x="1020" y="0" width="180" height="600" fill="url(%23curtain)"/><g opacity="0.7"><rect x="200" y="480" width="800" height="120" fill="%231a1a1a" rx="15"/><circle cx="280" cy="520" r="12" fill="%232d2d2d"/><circle cx="380" cy="520" r="12" fill="%232d2d2d"/><circle cx="480" cy="520" r="12" fill="%232d2d2d"/><circle cx="580" cy="520" r="12" fill="%232d2d2d"/><circle cx="680" cy="520" r="12" fill="%232d2d2d"/><circle cx="780" cy="520" r="12" fill="%232d2d2d"/><circle cx="880" cy="520" r="12" fill="%232d2d2d"/><rect x="250" y="500" width="30" height="40" fill="%23333333" rx="5"/><rect x="350" y="500" width="30" height="40" fill="%23333333" rx="5"/><rect x="450" y="500" width="30" height="40" fill="%23333333" rx="5"/><rect x="550" y="500" width="30" height="40" fill="%23333333" rx="5"/><rect x="650" y="500" width="30" height="40" fill="%23333333" rx="5"/><rect x="750" y="500" width="30" height="40" fill="%23333333" rx="5"/><rect x="850" y="500" width="30" height="40" fill="%23333333" rx="5"/></g></svg>');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
         
         .streaming-bg {
-            background-image: 
-                linear-gradient(rgba(249, 250, 251, 0.95), rgba(249, 250, 251, 0.95)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="streamPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><rect width="100" height="100" fill="%23f8fafc"/><circle cx="20" cy="20" r="15" fill="%23e2e8f0" opacity="0.5"/><rect x="45" y="10" width="40" height="20" fill="%23cbd5e1" opacity="0.3" rx="3"/><circle cx="80" cy="80" r="12" fill="%23e2e8f0" opacity="0.4"/><rect x="10" y="60" width="30" height="15" fill="%23cbd5e1" opacity="0.3" rx="2"/></pattern></defs><rect width="1200" height="400" fill="url(%23streamPattern)"/><g opacity="0.6"><rect x="100" y="50" width="200" height="120" fill="%23667eea" opacity="0.1" rx="10"/><rect x="350" y="80" width="180" height="100" fill="%23764ba2" opacity="0.1" rx="8"/><rect x="580" y="60" width="220" height="110" fill="%23667eea" opacity="0.1" rx="12"/><rect x="850" y="70" width="190" height="105" fill="%23764ba2" opacity="0.1" rx="9"/></g></svg>');
+            background: 
+                linear-gradient(rgba(26, 26, 26, 0.9), rgba(45, 45, 45, 0.9)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="streamPattern" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse"><rect width="120" height="120" fill="%23000000"/><circle cx="25" cy="25" r="18" fill="%23ffd700" opacity="0.3"/><rect x="55" y="15" width="50" height="25" fill="%23ff6b35" opacity="0.2" rx="5"/><circle cx="90" cy="90" r="15" fill="%23ffd700" opacity="0.25"/><rect x="15" y="70" width="35" height="18" fill="%23ff6b35" opacity="0.2" rx="3"/><polygon points="70,60 85,50 85,70" fill="%23ffffff" opacity="0.4"/><rect x="45" y="85" width="25" height="3" fill="%23ffd700" opacity="0.6"/><rect x="45" y="90" width="35" height="3" fill="%23ffd700" opacity="0.4"/><rect x="45" y="95" width="20" height="3" fill="%23ffd700" opacity="0.5"/></pattern></defs><rect width="1200" height="400" fill="url(%23streamPattern)"/><g opacity="0.4"><rect x="100" y="50" width="200" height="120" fill="%23ffd700" opacity="0.1" rx="10"/><rect x="350" y="80" width="180" height="100" fill="%23ff6b35" opacity="0.1" rx="8"/><rect x="580" y="60" width="220" height="110" fill="%23ffd700" opacity="0.1" rx="12"/><rect x="850" y="70" width="190" height="105" fill="%23ff6b35" opacity="0.1" rx="9"/></g></svg>');
             background-size: cover;
             background-position: center;
         }
         
         .movie-reel-bg {
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"><defs><pattern id="filmStrip" x="0" y="0" width="80" height="500" patternUnits="userSpaceOnUse"><rect width="80" height="500" fill="%23f1f5f9"/><rect x="5" y="0" width="70" height="500" fill="%23ffffff"/><rect x="0" y="20" width="10" height="15" fill="%23334155"/><rect x="70" y="20" width="10" height="15" fill="%23334155"/><rect x="0" y="50" width="10" height="15" fill="%23334155"/><rect x="70" y="50" width="10" height="15" fill="%23334155"/><rect x="0" y="80" width="10" height="15" fill="%23334155"/><rect x="70" y="80" width="10" height="15" fill="%23334155"/><rect x="0" y="110" width="10" height="15" fill="%23334155"/><rect x="70" y="110" width="10" height="15" fill="%23334155"/></pattern></defs><rect width="1200" height="500" fill="url(%23filmStrip)"/><g opacity="0.3"><circle cx="200" cy="100" r="40" fill="%23667eea" opacity="0.2"/><circle cx="600" cy="150" r="35" fill="%23764ba2" opacity="0.2"/><circle cx="1000" cy="120" r="45" fill="%23667eea" opacity="0.2"/><rect x="150" y="300" width="100" height="60" fill="%23e2e8f0" opacity="0.4" rx="5"/><rect x="550" y="320" width="120" height="70" fill="%23cbd5e1" opacity="0.4" rx="5"/><rect x="950" y="310" width="110" height="65" fill="%23e2e8f0" opacity="0.4" rx="5"/></g></svg>');
+            background: 
+                linear-gradient(rgba(26, 26, 26, 0.9), rgba(45, 45, 45, 0.9)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"><defs><pattern id="filmStrip" x="0" y="0" width="100" height="500" patternUnits="userSpaceOnUse"><rect width="100" height="500" fill="%23000000"/><rect x="8" y="0" width="84" height="500" fill="%23111111"/><rect x="0" y="25" width="16" height="20" fill="%23333333"/><rect x="84" y="25" width="16" height="20" fill="%23333333"/><rect x="0" y="60" width="16" height="20" fill="%23333333"/><rect x="84" y="60" width="16" height="20" fill="%23333333"/><rect x="0" y="95" width="16" height="20" fill="%23333333"/><rect x="84" y="95" width="16" height="20" fill="%23333333"/><rect x="0" y="130" width="16" height="20" fill="%23333333"/><rect x="84" y="130" width="16" height="20" fill="%23333333"/><rect x="0" y="165" width="16" height="20" fill="%23333333"/><rect x="84" y="165" width="16" height="20" fill="%23333333"/><circle cx="8" cy="35" r="6" fill="%23000000"/><circle cx="92" cy="35" r="6" fill="%23000000"/><circle cx="8" cy="70" r="6" fill="%23000000"/><circle cx="92" cy="70" r="6" fill="%23000000"/></pattern></defs><rect width="1200" height="500" fill="url(%23filmStrip)"/><g opacity="0.5"><circle cx="250" cy="120" r="50" fill="%23ffd700" opacity="0.2"/><circle cx="650" cy="180" r="45" fill="%23ff6b35" opacity="0.2"/><circle cx="1050" cy="140" r="55" fill="%23ffd700" opacity="0.2"/><rect x="180" y="320" width="120" height="80" fill="%23333333" opacity="0.6" rx="8"/><rect x="580" y="340" width="140" height="90" fill="%23444444" opacity="0.6" rx="8"/><rect x="980" y="330" width="130" height="85" fill="%23333333" opacity="0.6" rx="8"/></g></svg>');
             background-size: cover;
             background-position: center;
         }
         
         .contact-cinema-bg {
-            background-image: 
-                linear-gradient(rgba(249, 250, 251, 0.9), rgba(249, 250, 251, 0.9)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><radialGradient id="projectorLight" cx="50%" cy="20%" r="60%"><stop offset="0%" style="stop-color:%23ffffff;stop-opacity:0.3"/><stop offset="70%" style="stop-color:%23667eea;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23764ba2;stop-opacity:0.05"/></radialGradient></defs><rect width="1200" height="600" fill="url(%23projectorLight)"/><g opacity="0.4"><rect x="50" y="450" width="1100" height="150" fill="%23e2e8f0" opacity="0.3" rx="20"/><circle cx="150" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="250" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="350" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="450" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="550" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="650" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="750" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="850" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="950" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="1050" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/></g></svg>');
+            background: 
+                linear-gradient(rgba(26, 26, 26, 0.85), rgba(45, 45, 45, 0.85)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><radialGradient id="projectorLight" cx="50%" cy="15%" r="70%"><stop offset="0%" style="stop-color:%23ffd700;stop-opacity:0.4"/><stop offset="50%" style="stop-color:%23ffffff;stop-opacity:0.2"/><stop offset="100%" style="stop-color:%23000000;stop-opacity:0.9"/></radialGradient></defs><rect width="1200" height="600" fill="url(%23projectorLight)"/><g opacity="0.6"><rect x="80" y="450" width="1040" height="150" fill="%231a1a1a" opacity="0.7" rx="25"/><circle cx="180" cy="500" r="30" fill="%232d2d2d" opacity="0.8"/><circle cx="300" cy="500" r="30" fill="%232d2d2d" opacity="0.8"/><circle cx="420" cy="500" r="30" fill="%232d2d2d" opacity="0.8"/><circle cx="540" cy="500" r="30" fill="%232d2d2d" opacity="0.8"/><circle cx="660" cy="500" r="30" fill="%232d2d2d" opacity="0.8"/><circle cx="780" cy="500" r="30" fill="%232d2d2d" opacity="0.8"/><circle cx="900" cy="500" r="30" fill="%232d2d2d" opacity="0.8"/><circle cx="1020" cy="500" r="30" fill="%232d2d2d" opacity="0.8"/><rect x="150" y="480" width="60" height="40" fill="%23333333" opacity="0.9" rx="8"/><rect x="270" y="480" width="60" height="40" fill="%23333333" opacity="0.9" rx="8"/><rect x="390" y="480" width="60" height="40" fill="%23333333" opacity="0.9" rx="8"/><rect x="510" y="480" width="60" height="40" fill="%23333333" opacity="0.9" rx="8"/><rect x="630" y="480" width="60" height="40" fill="%23333333" opacity="0.9" rx="8"/><rect x="750" y="480" width="60" height="40" fill="%23333333" opacity="0.9" rx="8"/><rect x="870" y="480" width="60" height="40" fill="%23333333" opacity="0.9" rx="8"/><rect x="990" y="480" width="60" height="40" fill="%23333333" opacity="0.9" rx="8"/></g></svg>');
             background-size: cover;
             background-position: center;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        @keyframes scroll-reverse {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        
+        .animate-scroll {
+            animation: scroll 30s linear infinite;
+        }
+        
+        .animate-scroll-reverse {
+            animation: scroll-reverse 25s linear infinite;
         }
     </style>
   <style>@view-transition { navigation: auto; }</style>
@@ -195,7 +262,7 @@
   <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
    <nav class="container mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
-     <div class="flex items-center space-x-4"><img src="https://github.com/rimedhn/livetv/blob/main/Logo.jpeg?raw=true" alt="Live TV Logo" class="h-12 w-12 rounded-full object-cover" onerror="this.src=''; this.alt='Logo no disponible'; this.style.display='none';"> <span id="business-name" class="text-2xl font-bold">Live TV</span>
+     <div class="flex items-center space-x-4"><img src="https://github.com/rimedhn/livetv/blob/main/Logo.jpeg?raw=true" alt="Live TV Logo" class="h-12 w-12 rounded-lg object-cover border-2 border-white/20" onerror="this.src=''; this.alt='Logo no disponible'; this.style.display='none';"> <span id="business-name" class="text-2xl font-bold text-white">Live TV</span>
      </div>
      <div class="hidden md:flex space-x-8"><a href="#inicio" class="nav-link hover:text-gray-200">Inicio</a> <a href="#servicios" class="nav-link hover:text-gray-200">Servicios</a> <a href="#comparativa" class="nav-link hover:text-gray-200">Comparativa</a> <a href="#paquetes" class="nav-link hover:text-gray-200">Paquetes</a> <a href="#contacto" class="nav-link hover:text-gray-200">Contacto</a>
      </div><button id="mobile-menu-btn" class="md:hidden text-white">
@@ -213,45 +280,213 @@
     <div class="flex flex-wrap justify-center gap-4"><a href="#servicios" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Ver Servicios</a> <a href="#contacto" class="bg-transparent border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition">Contáctanos</a>
     </div>
    </div>
+  </section><!-- Carousel Section -->
+  <section class="py-16 bg-black overflow-hidden">
+   <div class="container mx-auto px-6 mb-12">
+    <h2 class="text-4xl font-bold text-center mb-8 vibrant-title">Nuestros Servicios Premium</h2>
+    <div class="relative">
+     <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+      <div class="min-w-full relative"><img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&amp;h=400&amp;fit=crop&amp;crop=center" alt="Streaming Banner 1" class="w-full h-64 object-cover rounded-lg" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 400%22><rect width=%221200%22 height=%22400%22 fill=%22%23ffd700%22/><text x=%22600%22 y=%22200%22 text-anchor=%22middle%22 font-size=%2248%22 fill=%22%23000%22>LIVE TV STREAMING</text></svg>';">
+       <div class="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
+        <div class="text-center text-white">
+         <h3 class="text-3xl font-bold mb-2">🦁 LION TV Premium</h3>
+         <p class="text-xl">Más de 7,000 canales en 4K</p>
+        </div>
+       </div>
+      </div>
+      <div class="min-w-full relative"><img src="https://images.unsplash.com/photo-1489599735734-79b4d2fea6c0?w=1200&amp;h=400&amp;fit=crop&amp;crop=center" alt="Streaming Banner 2" class="w-full h-64 object-cover rounded-lg" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 400%22><rect width=%221200%22 height=%22400%22 fill=%22%23ff6b35%22/><text x=%22600%22 y=%22200%22 text-anchor=%22middle%22 font-size=%2248%22 fill=%22%23fff%22>DELUXE TV</text></svg>';">
+       <div class="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
+        <div class="text-center text-white">
+         <h3 class="text-3xl font-bold mb-2">📺 DELUXE TV Plus</h3>
+         <p class="text-xl">Calidad premium a precio accesible</p>
+        </div>
+       </div>
+      </div>
+      <div class="min-w-full relative"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&amp;h=400&amp;fit=crop&amp;crop=center" alt="Streaming Banner 3" class="w-full h-64 object-cover rounded-lg" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 400%22><rect width=%221200%22 height=%22400%22 fill=%22%23333%22/><text x=%22600%22 y=%22200%22 text-anchor=%22middle%22 font-size=%2248%22 fill=%22%23fff%22>MULTI-DISPOSITIVO</text></svg>';">
+       <div class="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
+        <div class="text-center text-white">
+         <h3 class="text-3xl font-bold mb-2">📱 Multi-Dispositivo</h3>
+         <p class="text-xl">Disfruta en todos tus dispositivos</p>
+        </div>
+       </div>
+      </div>
+      <div class="min-w-full relative"><img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=1200&amp;h=400&amp;fit=crop&amp;crop=center" alt="Streaming Banner 4" class="w-full h-64 object-cover rounded-lg" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 400%22><rect width=%221200%22 height=%22400%22 fill=%22%23ffd700%22/><text x=%22600%22 y=%22200%22 text-anchor=%22middle%22 font-size=%2248%22 fill=%22%23000%22>4K ULTRA HD</text></svg>';">
+       <div class="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
+        <div class="text-center text-white">
+         <h3 class="text-3xl font-bold mb-2">⚡ Calidad 4K</h3>
+         <p class="text-xl">Ultra HD y sonido premium</p>
+        </div>
+       </div>
+      </div>
+      <div class="min-w-full relative"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&amp;h=400&amp;fit=crop&amp;crop=center" alt="Streaming Banner 5" class="w-full h-64 object-cover rounded-lg" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 400%22><rect width=%221200%22 height=%22400%22 fill=%22%23800020%22/><text x=%22600%22 y=%22200%22 text-anchor=%22middle%22 font-size=%2248%22 fill=%22%23fff%22>ENTRETENIMIENTO</text></svg>';">
+       <div class="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center">
+        <div class="text-center text-white">
+         <h3 class="text-3xl font-bold mb-2">🎬 Entretenimiento Total</h3>
+         <p class="text-xl">Películas, series y deportes</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Promotional Banners -->
+  <section class="py-8 bg-gradient-to-r from-red-900 to-red-700 overflow-hidden">
+   <div class="relative">
+    <div id="promo-banner" class="flex animate-scroll">
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🔥 OFERTA ESPECIAL: 50% DE DESCUENTO EN TU PRIMER MES
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      ⭐ NUEVO: LION TV con más de 7,000 canales en 4K
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      📱 COMPATIBLE con Smart TV, Android, iOS y más
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🎬 ESTRENOS DIARIOS de películas y series
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      💎 CALIDAD PREMIUM desde L.100 al mes
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🔥 OFERTA ESPECIAL: 50% DE DESCUENTO EN TU PRIMER MES
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      ⭐ NUEVO: LION TV con más de 7,000 canales en 4K
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      📱 COMPATIBLE con Smart TV, Android, iOS y más
+     </div>
+    </div>
+   </div>
+  </section><!-- Promotional Banner Blue -->
+  <section class="py-6 bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
+   <div class="relative">
+    <div class="flex animate-scroll-reverse">
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      💎 CALIDAD PREMIUM: Disfruta en HD, Full HD y 4K
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🌟 SOPORTE 24/7: Atención personalizada todos los días
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🚀 INSTALACIÓN GRATIS: Configuramos tu servicio sin costo
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🎯 SIN CONTRATOS: Cancela cuando quieras, sin penalizaciones
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      💎 CALIDAD PREMIUM: Disfruta en HD, Full HD y 4K
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🌟 SOPORTE 24/7: Atención personalizada todos los días
+     </div>
+    </div>
+   </div>
   </section><!-- Features Section -->
   <section class="py-16 streaming-bg">
    <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">¿Por Qué Elegir Live TV?</h2>
+    <h2 class="text-4xl font-bold text-center mb-12 neon-title">¿Por Qué Elegir Live TV?</h2>
     <div class="grid md:grid-cols-4 gap-8">
-     <div class="text-center">
-      <div class="feature-icon gradient-bg text-white mx-auto">
-       📺
+     <div class="text-center bg-black/30 p-6 rounded-xl backdrop-blur-sm">
+      <div class="w-20 h-20 mx-auto mb-4 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=400&amp;h=400&amp;fit=crop&amp;crop=center" alt="Miles de Canales" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23ffd700%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 font-size=%2240%22>📺</text></svg>';">
       </div>
-      <h3 class="text-xl font-semibold mb-2">Miles de Canales</h3>
-      <p class="text-gray-600">Acceso a más de 7,000 canales en vivo</p>
+      <h3 class="text-xl font-semibold mb-2 text-white">Miles de Canales</h3>
+      <p class="text-gray-200">Acceso a más de 7,000 canales en vivo</p>
      </div>
-     <div class="text-center">
-      <div class="feature-icon gradient-bg text-white mx-auto">
-       🎬
+     <div class="text-center bg-black/30 p-6 rounded-xl backdrop-blur-sm">
+      <div class="w-20 h-20 mx-auto mb-4 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1489599735734-79b4d2fea6c0?w=400&amp;h=400&amp;fit=crop&amp;crop=center" alt="Contenido Actualizado" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23ffd700%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 font-size=%2240%22>🎬</text></svg>';">
       </div>
-      <h3 class="text-xl font-semibold mb-2">Contenido Actualizado</h3>
-      <p class="text-gray-600">Estrenos de películas y series constantemente</p>
+      <h3 class="text-xl font-semibold mb-2 text-white">Contenido Actualizado</h3>
+      <p class="text-gray-200">Estrenos de películas y series constantemente</p>
      </div>
-     <div class="text-center">
-      <div class="feature-icon gradient-bg text-white mx-auto">
-       📱
+     <div class="text-center bg-black/30 p-6 rounded-xl backdrop-blur-sm">
+      <div class="w-20 h-20 mx-auto mb-4 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&amp;h=400&amp;fit=crop&amp;crop=center" alt="Multi-Dispositivo" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23ffd700%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 font-size=%2240%22>📱</text></svg>';">
       </div>
-      <h3 class="text-xl font-semibold mb-2">Multi-Dispositivo</h3>
-      <p class="text-gray-600">Disfruta en todos tus dispositivos</p>
+      <h3 class="text-xl font-semibold mb-2 text-white">Multi-Dispositivo</h3>
+      <p class="text-gray-200">Disfruta en todos tus dispositivos</p>
      </div>
-     <div class="text-center">
-      <div class="feature-icon gradient-bg text-white mx-auto">
-       ⚡
+     <div class="text-center bg-black/30 p-6 rounded-xl backdrop-blur-sm">
+      <div class="w-20 h-20 mx-auto mb-4 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=400&amp;h=400&amp;fit=crop&amp;crop=center" alt="Calidad Premium" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23ffd700%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 font-size=%2240%22>⚡</text></svg>';">
       </div>
-      <h3 class="text-xl font-semibold mb-2">Calidad Premium</h3>
-      <p class="text-gray-600">HD, Full HD y 4K disponibles</p>
+      <h3 class="text-xl font-semibold mb-2 text-white">Calidad Premium</h3>
+      <p class="text-gray-200">HD, Full HD y 4K disponibles</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Testimonials Carousel -->
+  <section class="py-16 bg-gradient-to-r from-purple-900 to-indigo-900">
+   <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-12 text-white">Lo Que Dicen Nuestros Clientes</h2>
+    <div class="relative overflow-hidden">
+     <div id="testimonials-carousel" class="flex transition-transform duration-500 ease-in-out">
+      <div class="min-w-full px-4">
+       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center text-white">
+        <div class="text-6xl mb-4">
+         ⭐⭐⭐⭐⭐
+        </div>
+        <p class="text-xl mb-4">"Excelente servicio, la calidad es increíble y el precio muy accesible. Lo recomiendo 100%"</p>
+        <p class="font-bold">- María González</p>
+       </div>
+      </div>
+      <div class="min-w-full px-4">
+       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center text-white">
+        <div class="text-6xl mb-4">
+         ⭐⭐⭐⭐⭐
+        </div>
+        <p class="text-xl mb-4">"Llevo 2 años con Live TV y nunca me ha fallado. Soporte técnico excelente"</p>
+        <p class="font-bold">- Carlos Rodríguez</p>
+       </div>
+      </div>
+      <div class="min-w-full px-4">
+       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center text-white">
+        <div class="text-6xl mb-4">
+         ⭐⭐⭐⭐⭐
+        </div>
+        <p class="text-xl mb-4">"La mejor decisión que tomé. Tengo todos los canales que quiero a un precio justo"</p>
+        <p class="font-bold">- Ana Martínez</p>
+       </div>
+      </div>
+      <div class="min-w-full px-4">
+       <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center text-white">
+        <div class="text-6xl mb-4">
+         ⭐⭐⭐⭐⭐
+        </div>
+        <p class="text-xl mb-4">"Instalación súper fácil y funciona perfecto en todos mis dispositivos"</p>
+        <p class="font-bold">- Roberto Silva</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Promotional Banner Green -->
+  <section class="py-6 bg-gradient-to-r from-green-900 to-emerald-700 overflow-hidden">
+   <div class="relative">
+    <div class="flex animate-scroll">
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🎬 ESTRENOS DIARIOS: Las últimas películas y series
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🏆 DEPORTES EN VIVO: Todos los partidos y eventos deportivos
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      📺 CANALES INTERNACIONALES: Contenido de todo el mundo
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🎵 MÚSICA Y ENTRETENIMIENTO: Canales especializados 24/7
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🎬 ESTRENOS DIARIOS: Las últimas películas y series
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🏆 DEPORTES EN VIVO: Todos los partidos y eventos deportivos
      </div>
     </div>
    </div>
   </section><!-- Services Section -->
   <section id="servicios" class="py-16 movie-reel-bg">
    <div class="container mx-auto px-6">
-    <h2 id="services-title" class="text-4xl font-bold text-center mb-12 gradient-text">Nuestros Servicios</h2>
+    <h2 id="services-title" class="text-4xl font-bold text-center mb-12 fire-title">Nuestros Servicios</h2>
     <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
      <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden relative">
       <div class="service-badge premium-badge">
@@ -307,21 +542,20 @@
     <p class="text-center text-gray-200 mb-12">Conoce las diferencias y elige el que mejor se adapte a tus necesidades</p>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- LION TV -->
      <div class="bg-white rounded-2xl p-6 shadow-lg">
-      <div class="flex items-center justify-between mb-4">
-       <h3 class="text-2xl font-bold">🦁 LION TV</h3><span class="premium-badge px-3 py-1 rounded-full text-xs">Premium</span>
+      <div class="flex items-center justify-between mb-4"><img src="https://github.com/rimedhn/livetv/blob/main/Lion%20TV.jpeg?raw=true" alt="LION TV" class="h-16 w-16 rounded-lg object-cover" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23ffd700%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 font-size=%2220%22>LION</text></svg>';"> <span class="premium-badge px-3 py-1 rounded-full text-xs">Premium</span>
       </div>
       <div class="space-y-3 text-sm">
-       <div class="flex items-start"><span class="mr-2">✅</span> <span>Canales HD, Full HD y 4K</span>
+       <div class="flex items-start"><span>• Canales HD, Full HD y 4K</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">📡</span> <span>Más de 7,000 canales en vivo</span>
+       <div class="flex items-start"><span>• Más de 7,000 canales en vivo</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">🎬</span> <span>Estrenos actualizados constantemente</span>
+       <div class="flex items-start"><span>• Estrenos actualizados constantemente</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">🗂️</span> <span>Carpeta especial de eventos diarios</span>
+       <div class="flex items-start"><span>• Carpeta especial de eventos diarios</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">🎞️</span> <span>Más de 37,000 películas</span>
+       <div class="flex items-start"><span>• Más de 37,000 películas</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">📺</span> <span>Más de 11,000 series</span>
+       <div class="flex items-start"><span>• Más de 11,000 series</span>
        </div>
        <div class="mt-4 pt-4 border-t">
         <p class="text-2xl font-bold gradient-text">Desde L.250</p>
@@ -329,21 +563,20 @@
       </div>
      </div><!-- CCIPTV -->
      <div class="bg-white rounded-2xl p-6 shadow-lg">
-      <div class="flex items-center justify-between mb-4">
-       <h3 class="text-2xl font-bold">🔴 CCIPTV</h3><span class="basic-badge px-3 py-1 rounded-full text-xs">Básico</span>
+      <div class="flex items-center justify-between mb-4"><img src="https://github.com/rimedhn/livetv/blob/main/CCIPTV.png?raw=true" alt="CCIPTV" class="h-16 w-16 rounded-lg object-cover" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23ff6b35%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 font-size=%2218%22>CCIPTV</text></svg>';"> <span class="basic-badge px-3 py-1 rounded-full text-xs">Básico</span>
       </div>
       <div class="space-y-3 text-sm">
-       <div class="flex items-start"><span class="mr-2">✅</span> <span>Canales HD y Full HD</span>
+       <div class="flex items-start"><span>• Canales HD y Full HD</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">📡</span> <span>Más de 2,300 canales en vivo</span>
+       <div class="flex items-start"><span>• Más de 2,300 canales en vivo</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">⏳</span> <span>Estrenos con días de subida</span>
+       <div class="flex items-start"><span>• Estrenos con días de subida</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">🗂️</span> <span>Carpeta especial de eventos diarios</span>
+       <div class="flex items-start"><span>• Carpeta especial de eventos diarios</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">🎞️</span> <span>Más de 22,000 películas</span>
+       <div class="flex items-start"><span>• Más de 22,000 películas</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">📺</span> <span>Más de 7,000 series</span>
+       <div class="flex items-start"><span>• Más de 7,000 series</span>
        </div>
        <div class="mt-4 pt-4 border-t">
         <p class="text-2xl font-bold gradient-text">Desde L.150</p>
@@ -351,21 +584,20 @@
       </div>
      </div><!-- MAGOTV -->
      <div class="bg-white rounded-2xl p-6 shadow-lg">
-      <div class="flex items-center justify-between mb-4">
-       <h3 class="text-2xl font-bold">🧙‍♂️ MAGOTV</h3><span class="plus-badge px-3 py-1 rounded-full text-xs">Full</span>
+      <div class="flex items-center justify-between mb-4"><img src="https://github.com/rimedhn/livetv/blob/main/Mango%20TV%20Plus%20HN.jpeg?raw=true" alt="MAGOTV" class="h-16 w-16 rounded-lg object-cover" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23800020%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 font-size=%2216%22>MAGO</text></svg>';"> <span class="plus-badge px-3 py-1 rounded-full text-xs">Full</span>
       </div>
       <div class="space-y-3 text-sm">
-       <div class="flex items-start"><span class="mr-2">✅</span> <span>Canales HD y Full HD</span>
+       <div class="flex items-start"><span>• Canales HD y Full HD</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">📡</span> <span>Más de 2,200 canales en vivo</span>
+       <div class="flex items-start"><span>• Más de 2,200 canales en vivo</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">⏳</span> <span>Estrenos con días de subida</span>
+       <div class="flex items-start"><span>• Estrenos con días de subida</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">🗂️</span> <span>Carpeta especial de eventos diarios</span>
+       <div class="flex items-start"><span>• Carpeta especial de eventos diarios</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">🎞️</span> <span>Más de 33,000 películas</span>
+       <div class="flex items-start"><span>• Más de 33,000 películas</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">📺</span> <span>Más de 3,000 series</span>
+       <div class="flex items-start"><span>• Más de 3,000 series</span>
        </div>
        <div class="mt-4 pt-4 border-t">
         <p class="text-2xl font-bold gradient-text">Desde L.100</p>
@@ -373,21 +605,20 @@
       </div>
      </div><!-- MICAPLAY HN -->
      <div class="bg-white rounded-2xl p-6 shadow-lg">
-      <div class="flex items-center justify-between mb-4">
-       <h3 class="text-2xl font-bold">🟣 MICAPLAY HN</h3><span class="plus-badge px-3 py-1 rounded-full text-xs">Profesional</span>
+      <div class="flex items-center justify-between mb-4"><img src="https://github.com/rimedhn/livetv/blob/main/Mica%20PLay.jpeg?raw=true" alt="MICAPLAY HN" class="h-16 w-16 rounded-lg object-cover" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23663399%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 font-size=%2214%22>MICA</text></svg>';"> <span class="plus-badge px-3 py-1 rounded-full text-xs">Profesional</span>
       </div>
       <div class="space-y-3 text-sm">
-       <div class="flex items-start"><span class="mr-2">✅</span> <span>Canales HD y Full HD</span>
+       <div class="flex items-start"><span>• Canales HD y Full HD</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">📡</span> <span>Más de 3,500 canales en vivo</span>
+       <div class="flex items-start"><span>• Más de 3,500 canales en vivo</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">⏳</span> <span>Películas y series con días de subida</span>
+       <div class="flex items-start"><span>• Películas y series con días de subida</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">🗂️</span> <span>Carpeta especial de eventos diarios</span>
+       <div class="flex items-start"><span>• Carpeta especial de eventos diarios</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">🎞️</span> <span>Más de 27,000 películas</span>
+       <div class="flex items-start"><span>• Más de 27,000 películas</span>
        </div>
-       <div class="flex items-start"><span class="mr-2">📺</span> <span>Más de 4,300 series</span>
+       <div class="flex items-start"><span>• Más de 4,300 series</span>
        </div>
        <div class="mt-4 pt-4 border-t">
         <p class="text-2xl font-bold gradient-text">Desde L.100</p>
@@ -396,11 +627,35 @@
      </div>
     </div>
    </div>
+  </section><!-- Promotional Banner Orange -->
+  <section class="py-6 bg-gradient-to-r from-orange-900 to-red-700 overflow-hidden">
+   <div class="relative">
+    <div class="flex animate-scroll-reverse">
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🔥 OFERTA LIMITADA: Primer mes con 50% de descuento
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      💰 MEJOR PRECIO: Garantizamos el mejor precio del mercado
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🎁 REGALO ESPECIAL: Configuración e instalación gratuita
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      ⚡ ACTIVACIÓN INMEDIATA: Disfruta en menos de 24 horas
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      🔥 OFERTA LIMITADA: Primer mes con 50% de descuento
+     </div>
+     <div class="flex-shrink-0 px-8 py-2 text-white font-bold text-lg whitespace-nowrap">
+      💰 MEJOR PRECIO: Garantizamos el mejor precio del mercado
+     </div>
+    </div>
+   </div>
   </section><!-- Packages Section -->
   <section id="paquetes" class="py-16 movie-reel-bg">
    <div class="container mx-auto px-6">
-    <h2 id="packages-title" class="text-4xl font-bold text-center mb-4 gradient-text">Planes y Precios</h2>
-    <p class="text-center text-gray-600 mb-12">Elige el plan que mejor se adapte a tus necesidades</p>
+    <h2 id="packages-title" class="text-4xl font-bold text-center mb-4 electric-title">Planes y Precios</h2>
+    <p class="text-center text-gray-300 mb-12">Elige el plan que mejor se adapte a tus necesidades</p>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- LION TV Packages -->
      <div class="price-card">
       <div class="flex items-center justify-between mb-4">
@@ -476,8 +731,8 @@
   </section><!-- Contact Section -->
   <section id="contacto" class="py-16 contact-cinema-bg">
    <div class="container mx-auto px-6">
-    <h2 id="contact-title" class="text-4xl font-bold text-center mb-4 gradient-text">Contáctanos</h2>
-    <p id="contact-subtitle" class="text-center text-gray-600 mb-12">Estamos aquí para ayudarte</p>
+    <h2 id="contact-title" class="text-4xl font-bold text-center mb-4 vibrant-title">Contáctanos</h2>
+    <p id="contact-subtitle" class="text-center text-gray-300 mb-12">Estamos aquí para ayudarte</p>
     <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8">
      <form id="contact-form">
       <div class="mb-6"><label for="name" class="block text-gray-700 font-semibold mb-2">Nombre Completo</label> <input type="text" id="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
@@ -528,11 +783,11 @@
             contact_title: "Contáctanos",
             contact_subtitle: "Estamos aquí para ayudarte",
             footer_text: "© 2024 Live TV. Todos los derechos reservados.",
-            primary_color: "#667eea",
-            secondary_color: "#764ba2",
-            text_color: "#333333",
-            background_color: "#f9fafb",
-            accent_color: "#ffffff"
+            primary_color: "#1a1a1a",
+            secondary_color: "#2d2d2d",
+            text_color: "#ffffff",
+            background_color: "#000000",
+            accent_color: "#ffd700"
         };
 
         async function onConfigChange(config) {
@@ -666,6 +921,32 @@
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
         });
 
+        // Carousel functionality
+        let currentSlide = 0;
+        const carousel = document.getElementById('carousel');
+        const totalSlides = 5;
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Auto-advance carousel every 4 seconds
+        setInterval(nextSlide, 4000);
+
+        // Testimonials carousel functionality
+        let currentTestimonial = 0;
+        const testimonialsCarousel = document.getElementById('testimonials-carousel');
+        const totalTestimonials = 4;
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            testimonialsCarousel.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+        }
+
+        // Auto-advance testimonials carousel every 5 seconds
+        setInterval(nextTestimonial, 5000);
+
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -685,5 +966,5 @@
             });
         });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'999217b4972a19be',t:'MTc2MjIzODEzOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99924fc9624819be',t:'MTc2MjI0MDQzNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
