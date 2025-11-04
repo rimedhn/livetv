@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live TV - Streaming Premium</title>
+  <link rel="icon" type="image/jpeg" href="https://github.com/rimedhn/livetv/blob/main/Logo.jpeg?raw=true">
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 2px 2px 25px rgba(0,0,0,0.4);
+        }
+        
+        .service-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .premium-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .plus-badge {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .basic-badge {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: white;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .comparison-table {
+            overflow-x: auto;
+        }
+        
+        .price-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .cinema-bg {
+            background-image: 
+                linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="spotlight" cx="50%" cy="30%" r="40%"><stop offset="0%" style="stop-color:%23ffffff;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23000000;stop-opacity:0.8"/></radialGradient></defs><rect width="1200" height="800" fill="url(%23spotlight)"/><g opacity="0.3"><circle cx="100" cy="100" r="2" fill="%23ffffff"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/></circle><circle cx="300" cy="150" r="1.5" fill="%23ffffff"><animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/></circle><circle cx="500" cy="80" r="2.5" fill="%23ffffff"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="5s" repeatCount="indefinite"/></circle><circle cx="700" cy="120" r="1" fill="%23ffffff"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/></circle><circle cx="900" cy="90" r="2" fill="%23ffffff"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.5s" repeatCount="indefinite"/></circle><circle cx="1100" cy="110" r="1.5" fill="%23ffffff"><animate attributeName="opacity" values="0.6;1;0.6" dur="4.5s" repeatCount="indefinite"/></circle></g></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .theater-bg {
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="curtain" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%23800020;stop-opacity:0.8"/><stop offset="50%" style="stop-color:%23a0002a;stop-opacity:0.9"/><stop offset="100%" style="stop-color:%23800020;stop-opacity:0.8"/></linearGradient></defs><rect width="1200" height="600" fill="%23000000"/><rect x="0" y="0" width="150" height="600" fill="url(%23curtain)"/><rect x="1050" y="0" width="150" height="600" fill="url(%23curtain)"/><g opacity="0.4"><rect x="200" y="500" width="800" height="100" fill="%23333333" rx="10"/><circle cx="250" cy="520" r="8" fill="%23666666"/><circle cx="350" cy="520" r="8" fill="%23666666"/><circle cx="450" cy="520" r="8" fill="%23666666"/><circle cx="550" cy="520" r="8" fill="%23666666"/><circle cx="650" cy="520" r="8" fill="%23666666"/><circle cx="750" cy="520" r="8" fill="%23666666"/><circle cx="850" cy="520" r="8" fill="%23666666"/><circle cx="950" cy="520" r="8" fill="%23666666"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .streaming-bg {
+            background-image: 
+                linear-gradient(rgba(249, 250, 251, 0.95), rgba(249, 250, 251, 0.95)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="streamPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><rect width="100" height="100" fill="%23f8fafc"/><circle cx="20" cy="20" r="15" fill="%23e2e8f0" opacity="0.5"/><rect x="45" y="10" width="40" height="20" fill="%23cbd5e1" opacity="0.3" rx="3"/><circle cx="80" cy="80" r="12" fill="%23e2e8f0" opacity="0.4"/><rect x="10" y="60" width="30" height="15" fill="%23cbd5e1" opacity="0.3" rx="2"/></pattern></defs><rect width="1200" height="400" fill="url(%23streamPattern)"/><g opacity="0.6"><rect x="100" y="50" width="200" height="120" fill="%23667eea" opacity="0.1" rx="10"/><rect x="350" y="80" width="180" height="100" fill="%23764ba2" opacity="0.1" rx="8"/><rect x="580" y="60" width="220" height="110" fill="%23667eea" opacity="0.1" rx="12"/><rect x="850" y="70" width="190" height="105" fill="%23764ba2" opacity="0.1" rx="9"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .movie-reel-bg {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"><defs><pattern id="filmStrip" x="0" y="0" width="80" height="500" patternUnits="userSpaceOnUse"><rect width="80" height="500" fill="%23f1f5f9"/><rect x="5" y="0" width="70" height="500" fill="%23ffffff"/><rect x="0" y="20" width="10" height="15" fill="%23334155"/><rect x="70" y="20" width="10" height="15" fill="%23334155"/><rect x="0" y="50" width="10" height="15" fill="%23334155"/><rect x="70" y="50" width="10" height="15" fill="%23334155"/><rect x="0" y="80" width="10" height="15" fill="%23334155"/><rect x="70" y="80" width="10" height="15" fill="%23334155"/><rect x="0" y="110" width="10" height="15" fill="%23334155"/><rect x="70" y="110" width="10" height="15" fill="%23334155"/></pattern></defs><rect width="1200" height="500" fill="url(%23filmStrip)"/><g opacity="0.3"><circle cx="200" cy="100" r="40" fill="%23667eea" opacity="0.2"/><circle cx="600" cy="150" r="35" fill="%23764ba2" opacity="0.2"/><circle cx="1000" cy="120" r="45" fill="%23667eea" opacity="0.2"/><rect x="150" y="300" width="100" height="60" fill="%23e2e8f0" opacity="0.4" rx="5"/><rect x="550" y="320" width="120" height="70" fill="%23cbd5e1" opacity="0.4" rx="5"/><rect x="950" y="310" width="110" height="65" fill="%23e2e8f0" opacity="0.4" rx="5"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .contact-cinema-bg {
+            background-image: 
+                linear-gradient(rgba(249, 250, 251, 0.9), rgba(249, 250, 251, 0.9)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><radialGradient id="projectorLight" cx="50%" cy="20%" r="60%"><stop offset="0%" style="stop-color:%23ffffff;stop-opacity:0.3"/><stop offset="70%" style="stop-color:%23667eea;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23764ba2;stop-opacity:0.05"/></radialGradient></defs><rect width="1200" height="600" fill="url(%23projectorLight)"/><g opacity="0.4"><rect x="50" y="450" width="1100" height="150" fill="%23e2e8f0" opacity="0.3" rx="20"/><circle cx="150" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="250" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="350" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="450" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="550" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="650" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="750" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="850" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="950" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/><circle cx="1050" cy="500" r="25" fill="%23cbd5e1" opacity="0.5"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="smooth-scroll"><!-- Header -->
+  <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+   <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+     <div class="flex items-center space-x-4"><img src="https://github.com/rimedhn/livetv/blob/main/Logo.jpeg?raw=true" alt="Live TV Logo" class="h-12 w-12 rounded-full object-cover" onerror="this.src=''; this.alt='Logo no disponible'; this.style.display='none';"> <span id="business-name" class="text-2xl font-bold">Live TV</span>
+     </div>
+     <div class="hidden md:flex space-x-8"><a href="#inicio" class="nav-link hover:text-gray-200">Inicio</a> <a href="#servicios" class="nav-link hover:text-gray-200">Servicios</a> <a href="#comparativa" class="nav-link hover:text-gray-200">Comparativa</a> <a href="#paquetes" class="nav-link hover:text-gray-200">Paquetes</a> <a href="#contacto" class="nav-link hover:text-gray-200">Contacto</a>
+     </div><button id="mobile-menu-btn" class="md:hidden text-white">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg></button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2"><a href="#inicio" class="block py-2 hover:text-gray-200">Inicio</a> <a href="#servicios" class="block py-2 hover:text-gray-200">Servicios</a> <a href="#comparativa" class="block py-2 hover:text-gray-200">Comparativa</a> <a href="#paquetes" class="block py-2 hover:text-gray-200">Paquetes</a> <a href="#contacto" class="block py-2 hover:text-gray-200">Contacto</a>
+    </div>
+   </nav>
+  </header><!-- Hero Section -->
+  <section id="inicio" class="cinema-bg text-white py-20">
+   <div class="container mx-auto px-6 text-center">
+    <h1 id="hero-title" class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">Tu Entretenimiento Sin Límites</h1>
+    <p id="hero-subtitle" class="text-xl md:text-2xl mb-8 opacity-90">Miles de canales, películas y series al alcance de tu mano</p>
+    <div class="flex flex-wrap justify-center gap-4"><a href="#servicios" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Ver Servicios</a> <a href="#contacto" class="bg-transparent border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition">Contáctanos</a>
+    </div>
+   </div>
+  </section><!-- Features Section -->
+  <section class="py-16 streaming-bg">
+   <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">¿Por Qué Elegir Live TV?</h2>
+    <div class="grid md:grid-cols-4 gap-8">
+     <div class="text-center">
+      <div class="feature-icon gradient-bg text-white mx-auto">
+       📺
+      </div>
+      <h3 class="text-xl font-semibold mb-2">Miles de Canales</h3>
+      <p class="text-gray-600">Acceso a más de 7,000 canales en vivo</p>
+     </div>
+     <div class="text-center">
+      <div class="feature-icon gradient-bg text-white mx-auto">
+       🎬
+      </div>
+      <h3 class="text-xl font-semibold mb-2">Contenido Actualizado</h3>
+      <p class="text-gray-600">Estrenos de películas y series constantemente</p>
+     </div>
+     <div class="text-center">
+      <div class="feature-icon gradient-bg text-white mx-auto">
+       📱
+      </div>
+      <h3 class="text-xl font-semibold mb-2">Multi-Dispositivo</h3>
+      <p class="text-gray-600">Disfruta en todos tus dispositivos</p>
+     </div>
+     <div class="text-center">
+      <div class="feature-icon gradient-bg text-white mx-auto">
+       ⚡
+      </div>
+      <h3 class="text-xl font-semibold mb-2">Calidad Premium</h3>
+      <p class="text-gray-600">HD, Full HD y 4K disponibles</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Services Section -->
+  <section id="servicios" class="py-16 movie-reel-bg">
+   <div class="container mx-auto px-6">
+    <h2 id="services-title" class="text-4xl font-bold text-center mb-12 gradient-text">Nuestros Servicios</h2>
+    <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+     <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden relative">
+      <div class="service-badge premium-badge">
+       Premium
+      </div><img src="https://github.com/rimedhn/livetv/blob/main/Lion%20TV.jpeg?raw=true" alt="LION TV" class="w-full h-48 object-cover" onerror="this.src=''; this.alt='Imagen no disponible';">
+      <div class="p-6">
+       <h3 class="text-xl font-bold mb-2">LION TV</h3>
+       <p class="text-gray-600 text-sm">Servicio Premium con más de 7,000 canales y contenido 4K</p>
+      </div>
+     </div>
+     <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden relative">
+      <div class="service-badge plus-badge">
+       Plus
+      </div><img src="https://github.com/rimedhn/livetv/blob/main/Delux%20TV.jpeg?raw=true" alt="DELUXE TV" class="w-full h-48 object-cover" onerror="this.src=''; this.alt='Imagen no disponible';">
+      <div class="p-6">
+       <h3 class="text-xl font-bold mb-2">DELUXE TV</h3>
+       <p class="text-gray-600 text-sm">Servicio Plus con excelente relación calidad-precio</p>
+      </div>
+     </div>
+     <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden relative">
+      <div class="service-badge basic-badge">
+       Básico
+      </div><img src="https://github.com/rimedhn/livetv/blob/main/CCIPTV.png?raw=true" alt="CCIPTV" class="w-full h-48 object-cover" onerror="this.src=''; this.alt='Imagen no disponible';">
+      <div class="p-6">
+       <h3 class="text-xl font-bold mb-2">CCIPTV</h3>
+       <p class="text-gray-600 text-sm">Servicio Básico con más de 2,300 canales</p>
+      </div>
+     </div>
+     <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden relative">
+      <div class="service-badge plus-badge">
+       Profesional
+      </div><img src="https://github.com/rimedhn/livetv/blob/main/Mica%20PLay.jpeg?raw=true" alt="MICAPLAY HN" class="w-full h-48 object-cover" onerror="this.src=''; this.alt='Imagen no disponible';">
+      <div class="p-6">
+       <h3 class="text-xl font-bold mb-2">MICAPLAY HN</h3>
+       <p class="text-gray-600 text-sm">Servicio Profesional con más de 3,500 canales</p>
+      </div>
+     </div>
+     <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden relative">
+      <div class="service-badge plus-badge">
+       Full
+      </div><img src="https://github.com/rimedhn/livetv/blob/main/Mango%20TV%20Plus%20HN.jpeg?raw=true" alt="MAGOTV" class="w-full h-48 object-cover" onerror="this.src=''; this.alt='Imagen no disponible';">
+      <div class="p-6">
+       <h3 class="text-xl font-bold mb-2">MAGOTV</h3>
+       <p class="text-gray-600 text-sm">Servicio Full con más de 2,200 canales</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Comparison Section -->
+  <section id="comparativa" class="py-16 theater-bg text-white">
+   <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-4 text-white">Comparativa de Servicios</h2>
+    <p class="text-center text-gray-200 mb-12">Conoce las diferencias y elige el que mejor se adapte a tus necesidades</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- LION TV -->
+     <div class="bg-white rounded-2xl p-6 shadow-lg">
+      <div class="flex items-center justify-between mb-4">
+       <h3 class="text-2xl font-bold">🦁 LION TV</h3><span class="premium-badge px-3 py-1 rounded-full text-xs">Premium</span>
+      </div>
+      <div class="space-y-3 text-sm">
+       <div class="flex items-start"><span class="mr-2">✅</span> <span>Canales HD, Full HD y 4K</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">📡</span> <span>Más de 7,000 canales en vivo</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">🎬</span> <span>Estrenos actualizados constantemente</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">🗂️</span> <span>Carpeta especial de eventos diarios</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">🎞️</span> <span>Más de 37,000 películas</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">📺</span> <span>Más de 11,000 series</span>
+       </div>
+       <div class="mt-4 pt-4 border-t">
+        <p class="text-2xl font-bold gradient-text">Desde L.250</p>
+       </div>
+      </div>
+     </div><!-- CCIPTV -->
+     <div class="bg-white rounded-2xl p-6 shadow-lg">
+      <div class="flex items-center justify-between mb-4">
+       <h3 class="text-2xl font-bold">🔴 CCIPTV</h3><span class="basic-badge px-3 py-1 rounded-full text-xs">Básico</span>
+      </div>
+      <div class="space-y-3 text-sm">
+       <div class="flex items-start"><span class="mr-2">✅</span> <span>Canales HD y Full HD</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">📡</span> <span>Más de 2,300 canales en vivo</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">⏳</span> <span>Estrenos con días de subida</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">🗂️</span> <span>Carpeta especial de eventos diarios</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">🎞️</span> <span>Más de 22,000 películas</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">📺</span> <span>Más de 7,000 series</span>
+       </div>
+       <div class="mt-4 pt-4 border-t">
+        <p class="text-2xl font-bold gradient-text">Desde L.150</p>
+       </div>
+      </div>
+     </div><!-- MAGOTV -->
+     <div class="bg-white rounded-2xl p-6 shadow-lg">
+      <div class="flex items-center justify-between mb-4">
+       <h3 class="text-2xl font-bold">🧙‍♂️ MAGOTV</h3><span class="plus-badge px-3 py-1 rounded-full text-xs">Full</span>
+      </div>
+      <div class="space-y-3 text-sm">
+       <div class="flex items-start"><span class="mr-2">✅</span> <span>Canales HD y Full HD</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">📡</span> <span>Más de 2,200 canales en vivo</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">⏳</span> <span>Estrenos con días de subida</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">🗂️</span> <span>Carpeta especial de eventos diarios</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">🎞️</span> <span>Más de 33,000 películas</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">📺</span> <span>Más de 3,000 series</span>
+       </div>
+       <div class="mt-4 pt-4 border-t">
+        <p class="text-2xl font-bold gradient-text">Desde L.100</p>
+       </div>
+      </div>
+     </div><!-- MICAPLAY HN -->
+     <div class="bg-white rounded-2xl p-6 shadow-lg">
+      <div class="flex items-center justify-between mb-4">
+       <h3 class="text-2xl font-bold">🟣 MICAPLAY HN</h3><span class="plus-badge px-3 py-1 rounded-full text-xs">Profesional</span>
+      </div>
+      <div class="space-y-3 text-sm">
+       <div class="flex items-start"><span class="mr-2">✅</span> <span>Canales HD y Full HD</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">📡</span> <span>Más de 3,500 canales en vivo</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">⏳</span> <span>Películas y series con días de subida</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">🗂️</span> <span>Carpeta especial de eventos diarios</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">🎞️</span> <span>Más de 27,000 películas</span>
+       </div>
+       <div class="flex items-start"><span class="mr-2">📺</span> <span>Más de 4,300 series</span>
+       </div>
+       <div class="mt-4 pt-4 border-t">
+        <p class="text-2xl font-bold gradient-text">Desde L.100</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Packages Section -->
+  <section id="paquetes" class="py-16 movie-reel-bg">
+   <div class="container mx-auto px-6">
+    <h2 id="packages-title" class="text-4xl font-bold text-center mb-4 gradient-text">Planes y Precios</h2>
+    <p class="text-center text-gray-600 mb-12">Elige el plan que mejor se adapte a tus necesidades</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- LION TV Packages -->
+     <div class="price-card">
+      <div class="flex items-center justify-between mb-4">
+       <h3 class="text-2xl font-bold">🦁 LION TV</h3><span class="premium-badge px-3 py-1 rounded-full text-xs">Premium</span>
+      </div>
+      <div class="space-y-3">
+       <div class="flex justify-between items-center py-2 border-b"><span>📱 1 Dispositivo</span> <span class="font-bold">L.250</span>
+       </div>
+       <div class="flex justify-between items-center py-2 border-b"><span>📱📱 2 Dispositivos</span> <span class="font-bold">L.275</span>
+       </div>
+       <div class="flex justify-between items-center py-2"><span>📱📱📱 3 Dispositivos</span> <span class="font-bold">L.300</span>
+       </div>
+      </div>
+     </div><!-- DELUXE TV Packages -->
+     <div class="price-card">
+      <div class="flex items-center justify-between mb-4">
+       <h3 class="text-2xl font-bold">📺 DELUXE TV</h3><span class="plus-badge px-3 py-1 rounded-full text-xs">Plus</span>
+      </div>
+      <div class="space-y-3">
+       <div class="flex justify-between items-center py-2 border-b"><span>📱 1 Dispositivo</span> <span class="font-bold">L.200</span>
+       </div>
+       <div class="flex justify-between items-center py-2 border-b"><span>📱📱 2 Dispositivos</span> <span class="font-bold">L.225</span>
+       </div>
+       <div class="flex justify-between items-center py-2 border-b"><span>📱📱📱 3 Dispositivos</span> <span class="font-bold">L.250</span>
+       </div>
+       <div class="flex justify-between items-center py-2"><span>📱📱📱📱 4 Dispositivos</span> <span class="font-bold">L.300</span>
+       </div>
+      </div>
+     </div><!-- CCIPTV Packages -->
+     <div class="price-card">
+      <div class="flex items-center justify-between mb-4">
+       <h3 class="text-2xl font-bold">🔴 CCIPTV</h3><span class="basic-badge px-3 py-1 rounded-full text-xs">Básico</span>
+      </div>
+      <div class="space-y-3">
+       <div class="flex justify-between items-center py-2 border-b"><span>📱 1 Dispositivo</span> <span class="font-bold">L.150</span>
+       </div>
+       <div class="flex justify-between items-center py-2 border-b"><span>📱📱 2 Dispositivos</span> <span class="font-bold">L.175</span>
+       </div>
+       <div class="flex justify-between items-center py-2"><span>📱📱📱 3 Dispositivos</span> <span class="font-bold">L.200</span>
+       </div>
+      </div>
+     </div><!-- MICAPLAY HN Packages -->
+     <div class="price-card">
+      <div class="flex items-center justify-between mb-4">
+       <h3 class="text-2xl font-bold">🟣 MICAPLAY HN</h3><span class="plus-badge px-3 py-1 rounded-full text-xs">Profesional</span>
+      </div>
+      <div class="space-y-3">
+       <div class="flex justify-between items-center py-2 border-b"><span>📱 1 Dispositivo</span> <span class="font-bold">L.100</span>
+       </div>
+       <div class="flex justify-between items-center py-2 border-b"><span>📱📱 2 Dispositivos</span> <span class="font-bold">L.125</span>
+       </div>
+       <div class="flex justify-between items-center py-2 border-b"><span>📱📱📱 3 Dispositivos</span> <span class="font-bold">L.150</span>
+       </div>
+       <div class="flex justify-between items-center py-2"><span>📱📱📱📱 4 Dispositivos</span> <span class="font-bold">L.175</span>
+       </div>
+      </div>
+     </div><!-- MAGOTV Packages -->
+     <div class="price-card">
+      <div class="flex items-center justify-between mb-4">
+       <h3 class="text-2xl font-bold">🧙‍♂️ MAGOTV</h3><span class="plus-badge px-3 py-1 rounded-full text-xs">Full</span>
+      </div>
+      <div class="space-y-3">
+       <div class="flex justify-between items-center py-2 border-b"><span>📱 1 Dispositivo</span> <span class="font-bold">L.100</span>
+       </div>
+       <div class="flex justify-between items-center py-2 border-b"><span>📱📱 2 Dispositivos</span> <span class="font-bold">L.125</span>
+       </div>
+       <div class="flex justify-between items-center py-2"><span>📱📱📱 3 Dispositivos</span> <span class="font-bold">L.150</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Contact Section -->
+  <section id="contacto" class="py-16 contact-cinema-bg">
+   <div class="container mx-auto px-6">
+    <h2 id="contact-title" class="text-4xl font-bold text-center mb-4 gradient-text">Contáctanos</h2>
+    <p id="contact-subtitle" class="text-center text-gray-600 mb-12">Estamos aquí para ayudarte</p>
+    <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+     <form id="contact-form">
+      <div class="mb-6"><label for="name" class="block text-gray-700 font-semibold mb-2">Nombre Completo</label> <input type="text" id="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+      </div>
+      <div class="mb-6"><label for="phone" class="block text-gray-700 font-semibold mb-2">Teléfono</label> <input type="tel" id="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+      </div>
+      <div class="mb-6"><label for="service" class="block text-gray-700 font-semibold mb-2">Servicio de Interés</label> <select id="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"> <option value="">Selecciona un servicio</option> <option value="LION TV">LION TV - Premium</option> <option value="DELUXE TV">DELUXE TV - Plus</option> <option value="CCIPTV">CCIPTV - Básico</option> <option value="MICAPLAY HN">MICAPLAY HN - Profesional</option> <option value="MAGOTV">MAGOTV - Full</option> </select>
+      </div>
+      <div class="mb-6"><label for="message" class="block text-gray-700 font-semibold mb-2">Mensaje</label> <textarea id="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+      </div><button type="submit" class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition"> Enviar por WhatsApp </button>
+     </form>
+    </div>
+   </div>
+  </section><!-- Footer -->
+  <footer class="gradient-bg text-white py-12">
+   <div class="container mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+     <div>
+      <h3 class="text-xl font-bold mb-4">Live TV</h3>
+      <p class="opacity-90">Tu mejor opción en streaming de televisión por internet</p>
+     </div>
+     <div>
+      <h3 class="text-xl font-bold mb-4">Contacto</h3>
+      <p class="opacity-90 mb-2">📧 jorgeamontalvans@gmail.com</p>
+      <p class="opacity-90">📱 +504 9550-4168</p>
+     </div>
+     <div>
+      <h3 class="text-xl font-bold mb-4">Síguenos</h3>
+      <div id="social-links" class="flex space-x-4"><!-- Social links will be added here if URLs are provided -->
+      </div>
+     </div>
+    </div>
+    <div class="border-t border-white border-opacity-20 pt-8 text-center">
+     <p id="footer-text" class="opacity-90 mb-4">© 2024 Live TV. Todos los derechos reservados.</p>
+     <p class="text-sm opacity-75">Desarrollado por <a href="https://www.rimeddigital.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-gray-200">Rimed Digital</a> | gerencia@rimeddigital.com | +504 9359-3126</p>
+    </div>
+   </div>
+  </footer><!-- WhatsApp Float Button --> <a href="https://wa.me/50495504168" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+   <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor" width="30" height="30"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+   </svg></a>
+  <script>
+        const defaultConfig = {
+            business_name: "Live TV",
+            hero_title: "Tu Entretenimiento Sin Límites",
+            hero_subtitle: "Miles de canales, películas y series al alcance de tu mano",
+            services_title: "Nuestros Servicios",
+            packages_title: "Planes y Precios",
+            contact_title: "Contáctanos",
+            contact_subtitle: "Estamos aquí para ayudarte",
+            footer_text: "© 2024 Live TV. Todos los derechos reservados.",
+            primary_color: "#667eea",
+            secondary_color: "#764ba2",
+            text_color: "#333333",
+            background_color: "#f9fafb",
+            accent_color: "#ffffff"
+        };
+
+        async function onConfigChange(config) {
+            const businessName = config.business_name || defaultConfig.business_name;
+            const heroTitle = config.hero_title || defaultConfig.hero_title;
+            const heroSubtitle = config.hero_subtitle || defaultConfig.hero_subtitle;
+            const servicesTitle = config.services_title || defaultConfig.services_title;
+            const packagesTitle = config.packages_title || defaultConfig.packages_title;
+            const contactTitle = config.contact_title || defaultConfig.contact_title;
+            const contactSubtitle = config.contact_subtitle || defaultConfig.contact_subtitle;
+            const footerText = config.footer_text || defaultConfig.footer_text;
+            const primaryColor = config.primary_color || defaultConfig.primary_color;
+            const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const backgroundColor = config.background_color || defaultConfig.background_color;
+            const accentColor = config.accent_color || defaultConfig.accent_color;
+
+            document.getElementById('business-name').textContent = businessName;
+            document.getElementById('hero-title').textContent = heroTitle;
+            document.getElementById('hero-subtitle').textContent = heroSubtitle;
+            document.getElementById('services-title').textContent = servicesTitle;
+            document.getElementById('packages-title').textContent = packagesTitle;
+            document.getElementById('contact-title').textContent = contactTitle;
+            document.getElementById('contact-subtitle').textContent = contactSubtitle;
+            document.getElementById('footer-text').textContent = footerText;
+
+            const gradientBgElements = document.querySelectorAll('.gradient-bg');
+            gradientBgElements.forEach(el => {
+                el.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+            });
+
+            const gradientTextElements = document.querySelectorAll('.gradient-text');
+            gradientTextElements.forEach(el => {
+                el.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+                el.style.webkitBackgroundClip = 'text';
+                el.style.webkitTextFillColor = 'transparent';
+                el.style.backgroundClip = 'text';
+            });
+
+            document.body.style.color = textColor;
+            
+            const bgSections = document.querySelectorAll('.bg-gray-50');
+            bgSections.forEach(el => {
+                el.style.backgroundColor = backgroundColor;
+            });
+
+            const whiteCards = document.querySelectorAll('.bg-white');
+            whiteCards.forEach(el => {
+                el.style.backgroundColor = accentColor;
+            });
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig: defaultConfig,
+                onConfigChange: onConfigChange,
+                mapToCapabilities: (config) => ({
+                    recolorables: [
+                        {
+                            get: () => config.primary_color || defaultConfig.primary_color,
+                            set: (value) => {
+                                config.primary_color = value;
+                                window.elementSdk.setConfig({ primary_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.secondary_color || defaultConfig.secondary_color,
+                            set: (value) => {
+                                config.secondary_color = value;
+                                window.elementSdk.setConfig({ secondary_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.text_color || defaultConfig.text_color,
+                            set: (value) => {
+                                config.text_color = value;
+                                window.elementSdk.setConfig({ text_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.background_color || defaultConfig.background_color,
+                            set: (value) => {
+                                config.background_color = value;
+                                window.elementSdk.setConfig({ background_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.accent_color || defaultConfig.accent_color,
+                            set: (value) => {
+                                config.accent_color = value;
+                                window.elementSdk.setConfig({ accent_color: value });
+                            }
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: undefined,
+                    fontSizeable: undefined
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ["business_name", config.business_name || defaultConfig.business_name],
+                    ["hero_title", config.hero_title || defaultConfig.hero_title],
+                    ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+                    ["services_title", config.services_title || defaultConfig.services_title],
+                    ["packages_title", config.packages_title || defaultConfig.packages_title],
+                    ["contact_title", config.contact_title || defaultConfig.contact_title],
+                    ["contact_subtitle", config.contact_subtitle || defaultConfig.contact_subtitle],
+                    ["footer_text", config.footer_text || defaultConfig.footer_text]
+                ])
+            });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            const whatsappMessage = `Hola, soy ${name}%0A%0AEstoy interesado en: ${service}%0A%0AMi teléfono: ${phone}%0A%0AMensaje: ${message}`;
+            const whatsappUrl = `https://wa.me/50495504168?text=${whatsappMessage}`;
+            
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'999217b4972a19be',t:'MTc2MjIzODEzOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
